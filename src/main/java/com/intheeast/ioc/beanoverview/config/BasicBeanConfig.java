@@ -8,7 +8,7 @@ public class BasicBeanConfig {
 
     @Bean
     public ExampleBean exampleBean() {
-        return new ExampleBean(); // 기본 생성자를 사용하여 인스턴스 생성
+        return new ExampleBean(); // 디폴트 생성자를 사용하여 인스턴스 생성
     }
 }
 
