@@ -1,5 +1,7 @@
 package com.intheeast.ioc.dependencies.methodinjection.lookupmethodInjection.model;
 
+import org.springframework.beans.factory.annotation.Lookup;
+
 public abstract class CommandManager {
 	
 	public Object process(Object commandState) {
@@ -11,6 +13,7 @@ public abstract class CommandManager {
     }
 
     // 이 메소드의 구현은 어디에 있을까?
+	@Lookup
     protected abstract Command createCommand();
 
 }
