@@ -19,6 +19,9 @@ public class AppConfig {
 
     @Bean
     public CommandManager commandManager() {
-        return new CommandManager();
+//      return new CommandManager();
+    	CommandManager cm = new CommandManager();
+    	//cm.setCommand(command()); // Spring IoC Dependency Injection
+    	return cm;
     }
 }

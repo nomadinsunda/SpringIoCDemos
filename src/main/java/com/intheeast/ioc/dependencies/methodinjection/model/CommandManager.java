@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContextAware;
 public class CommandManager implements ApplicationContextAware {
 
 	private ApplicationContext applicationContext;
+	//private Command command;
 
 	public Object process(Map commandState) {
 		// grab a new instance of the appropriate Command
@@ -22,6 +23,10 @@ public class CommandManager implements ApplicationContextAware {
 		// notice the Spring API dependency!
 		return this.applicationContext.getBean("command", Command.class);
 	}
+	
+//	public void setCommand(Command command) {
+//		this.command = command;
+//	}
 
 	@Override
 	public void setApplicationContext(
