@@ -1,0 +1,20 @@
+package com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.destructioncallbacks;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.destructioncallbacks.config.AppConfig;
+
+public class Main {
+	
+	public static void main(String[] args) {
+        AnnotationConfigApplicationContext context = 
+        		new AnnotationConfigApplicationContext(AppConfig.class);
+
+        // 빈들이 초기화된 상태에서 메인 로직 실행
+        System.out.println("Application is running...");
+
+        // 컨텍스트 종료
+        context.close(); // 모든 파괴 콜백이 실행됨
+    }
+
+}
