@@ -1,6 +1,5 @@
 package com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.dao;
 
-
 import org.springframework.stereotype.Repository;
 
 @Repository

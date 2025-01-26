@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.dao.CustomerPreferenceDao;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.util.MovieCatalog;
 
-import java.util.Set;
-
 @Service
 public class MovieRecommender {
 

@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("singleton") // 기본값이 singleton
+@Scope("singleton") // 디폴트 값이 singleton
 public class SelfInjectionBean {
 
     @Autowired
