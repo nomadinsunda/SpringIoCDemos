@@ -1,6 +1,7 @@
 package com.intheeast.ioc.dependencies.dependencyinjection.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.intheeast.ioc.dependencies.dependencyinjection.service.MovieFinder;
@@ -9,6 +10,7 @@ import com.intheeast.ioc.dependencies.dependencyinjection.service.SimpleMovieLis
 
 
 @Configuration
+@ComponentScan({"com.intheeast.ioc.dependencies.dependencyinjection"})
 public class AppConfig {
 
     // Define MovieFinder bean

@@ -6,16 +6,16 @@ import org.springframework.context.annotation.Configuration;
 import com.intheeast.ioc.containeroverview.dao.jpa.JpaAccountDao;
 import com.intheeast.ioc.containeroverview.dao.jpa.JpaItemDao;
 
-@Configuration
+//@Configuration
 public class DaoConfig {
 
-    @Bean
+//    @Bean
     public JpaAccountDao accountDao() {
         // JpaAccountDao에 필요한 설정을 추가할 수 있습니다.
         return new JpaAccountDao();
     }
 
-    @Bean
+//    @Bean
     public JpaItemDao itemDao() {
         // JpaItemDao에 필요한 설정을 추가할 수 있습니다.
         return new JpaItemDao();

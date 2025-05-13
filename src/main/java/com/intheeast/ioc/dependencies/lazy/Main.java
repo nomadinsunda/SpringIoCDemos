@@ -8,6 +8,7 @@ import com.intheeast.ioc.dependencies.lazy.config.AppConfig;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Initializing ApplicationContext...");
+        
         ApplicationContext context = 
         		new AnnotationConfigApplicationContext(AppConfig.class);
 
