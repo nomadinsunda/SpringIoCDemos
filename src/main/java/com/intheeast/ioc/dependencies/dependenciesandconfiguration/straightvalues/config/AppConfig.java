@@ -15,10 +15,11 @@ public class AppConfig {
 	
 	@Bean
     public static PropertySourcesPlaceholderConfigurer properties() {
-        PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
+        PropertySourcesPlaceholderConfigurer configurer = 
+        		new PropertySourcesPlaceholderConfigurer();
         Properties properties = new Properties();
         properties.setProperty("jdbc.driver.className", "com.mysql.cj.jdbc.Driver");
-        properties.setProperty("jdbc.url", "jdbc:mysql://localhost:3306/sbdt_db");
+        properties.setProperty("jdbc.url", "jdbc:mysql://localhost:3306/testdb");
         configurer.setProperties(properties);
         return configurer;
     }

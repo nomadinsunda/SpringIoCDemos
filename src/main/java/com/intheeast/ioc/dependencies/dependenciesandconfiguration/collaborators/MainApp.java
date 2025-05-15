@@ -12,12 +12,14 @@ import com.intheeast.ioc.dependencies.dependenciesandconfiguration.collaborators
 public class MainApp {
 	
 	public static void main(String[] args) {
+		// 부모 컨텍스트 생성
 		AnnotationConfigApplicationContext parentContext = 
 				new AnnotationConfigApplicationContext(ParentConfig.class);
 
         // 자식 컨텍스트 생성 및 부모 설정
         AnnotationConfigApplicationContext childContext = 
         		new AnnotationConfigApplicationContext();
+        
         childContext.setParent(parentContext); // 부모 컨텍스트 설정
         childContext.register(ChildConfig.class);
         childContext.refresh();

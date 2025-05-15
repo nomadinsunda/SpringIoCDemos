@@ -1,5 +1,7 @@
 package com.intheeast.ioc.dependencies.dependson.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class ExampleBean {
     private ManagerBean manager;    
     
@@ -8,6 +10,7 @@ public class ExampleBean {
 		System.out.println("ExampleBean Default Contructor");
 	}
 
+    @Autowired
 	public void setManager(ManagerBean manager) {
         this.manager = manager;
     }

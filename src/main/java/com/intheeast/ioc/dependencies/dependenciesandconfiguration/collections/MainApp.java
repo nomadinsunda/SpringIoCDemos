@@ -8,7 +8,9 @@ import com.intheeast.ioc.dependencies.dependenciesandconfiguration.collections.m
 
 public class MainApp {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext context = 
+        		new AnnotationConfigApplicationContext(AppConfig.class);
+        
         ComplexObject complexObject = context.getBean(ComplexObject.class);
         System.out.println(complexObject);
     }
