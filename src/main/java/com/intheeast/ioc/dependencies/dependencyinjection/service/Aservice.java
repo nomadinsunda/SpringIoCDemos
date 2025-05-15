@@ -9,7 +9,7 @@ public class Aservice { //
 	private Bservice bService;
 	
 //	@Autowired
-//	public AService(BService bService) {
+//	public Aservice(Bservice bService) {
 //		this.bService = bService;
 //	}
 
