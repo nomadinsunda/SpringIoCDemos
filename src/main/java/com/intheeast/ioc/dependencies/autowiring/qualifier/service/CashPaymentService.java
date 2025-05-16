@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.intheeast.ioc.dependencies.autowiring.PaymentService;
 
-@Component("cashPaymentService")  // Bean 이름 지정 (명시적 이름)
+@Component("cashPayment")  // Bean 이름 지정 (명시적 이름)
 public class CashPaymentService implements PaymentService {
     @Override
     public void pay(int amount) {

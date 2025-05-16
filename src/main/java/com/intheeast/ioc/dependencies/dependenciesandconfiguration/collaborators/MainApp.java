@@ -25,7 +25,9 @@ public class MainApp {
         childContext.refresh();
 
         // 자식 컨텍스트에서 Proxy 빈 가져오기
-        ProxyFactoryBean proxyFactoryBean = childContext.getBean(ProxyFactoryBean.class);
+        ProxyFactoryBean proxyFactoryBean = 
+        		childContext.getBean(ProxyFactoryBean.class);
+        
         AccountService accountService = 
         		(AccountService) proxyFactoryBean.getObject();
 

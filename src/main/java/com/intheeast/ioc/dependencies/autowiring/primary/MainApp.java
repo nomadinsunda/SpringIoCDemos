@@ -11,7 +11,8 @@ public class MainApp {
         ApplicationContext context = 
         		new AnnotationConfigApplicationContext(AppConfig.class);
 
-        PaymentService paymentService = context.getBean(PaymentService.class);  // @Primary 가 적용된 Bean 주입
+        PaymentService paymentService = 
+        		context.getBean(PaymentService.class);  // @Primary 가 적용된 Bean 주입
         paymentService.pay(1000);
     }
 }

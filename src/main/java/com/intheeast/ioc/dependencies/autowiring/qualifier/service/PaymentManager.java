@@ -12,7 +12,8 @@ public class PaymentManager {
     private final PaymentService paymentService;
 
     @Autowired
-    public PaymentManager(@Qualifier("cashPaymentService") PaymentService paymentService) {
+    public PaymentManager(@Qualifier("cashPayment") 
+    			PaymentService paymentService) {
         this.paymentService = paymentService;
     }
 

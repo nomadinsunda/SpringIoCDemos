@@ -9,8 +9,11 @@ public class FirstService {
         System.out.println("[FirstService] Constructor called");
     }
 
+    // CallBack 메서드 : 여기서 Back은 Spring IoC 컨테이너를 의미
+    //                 초기화 콜백 메서드...
     @PostConstruct
     public void init() {
+    	
         System.out.println("[FirstService] @PostConstruct initialization logic executed");
     }
 

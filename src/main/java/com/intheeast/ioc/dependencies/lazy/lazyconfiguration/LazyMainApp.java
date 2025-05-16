@@ -4,6 +4,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.intheeast.ioc.dependencies.lazy.lazyconfiguration.config.LazyConfiguration;
+import com.intheeast.ioc.dependencies.lazy.lazyconfiguration.service.AnotherBean;
+import com.intheeast.ioc.dependencies.lazy.lazyconfiguration.service.ExpensiveToCreateBean;
 import com.intheeast.ioc.dependencies.lazy.lazyconfiguration.service.FirstService;
 import com.intheeast.ioc.dependencies.lazy.lazyconfiguration.service.SecondService;
 
@@ -28,5 +30,16 @@ public class LazyMainApp {
         System.out.println("\n=== SecondService Bean 요청 ===");
         SecondService secondService = context.getBean(SecondService.class);
         secondService.doAnotherThing();
+        
+        System.out.println("\n=== ExpensiveToCreateBean Bean 요청 ===");
+        ExpensiveToCreateBean expensiveToCreateBean = 
+        		context.getBean(ExpensiveToCreateBean.class);
+        
+        System.out.println("\n=== AnotherBean Bean 요청 ===");
+        AnotherBean anotherBean = context.getBean(AnotherBean.class);
+        
+        System.out.println("Good-Bye");
+        
+        return;
     }
 }

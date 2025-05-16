@@ -13,6 +13,7 @@ public class MainApp {
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
         // CommandManager 빈을 가져오기
+        // CommandManager 빈의 팩토리 메서드 : commandManager 
         CommandManager commandManager = context.getBean(CommandManager.class);
 
         // process 메서드를 호출하여 Command를 실행
