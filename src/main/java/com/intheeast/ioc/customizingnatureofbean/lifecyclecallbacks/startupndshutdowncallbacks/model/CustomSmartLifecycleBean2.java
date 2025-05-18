@@ -2,25 +2,27 @@ package com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.startupndsh
 
 import org.springframework.context.SmartLifecycle;
 
-public class CustomSmartLifecycleBean implements SmartLifecycle {
+public class CustomSmartLifecycleBean2 implements SmartLifecycle {
 
     private boolean running = false;
 
     @Override
     public void start() {
-        System.out.println("CustomSmartLifecycleBean: Starting with phase " + getPhase() + "...");
+        System.out.println("CustomSmartLifecycleBean2: Starting with phase " 
+        						+ getPhase() + "...");
         running = true;
     }
 
     @Override
     public void stop() {
-        System.out.println("CustomSmartLifecycleBean: Stopping with phase " + getPhase() + "...");
+        System.out.println("CustomSmartLifecycleBean2: Stopping with phase " 
+        						+ getPhase() + "...");
         running = false;
     }
 
     @Override
     public void stop(Runnable callback) {
-        System.out.println("CustomSmartLifecycleBean: Asynchronous stopping...");
+        System.out.println("CustomSmartLifecycleBean2: Asynchronous stopping...");
         stop();
         callback.run(); // shutdown callback
     }
@@ -32,7 +34,7 @@ public class CustomSmartLifecycleBean implements SmartLifecycle {
 
     @Override
     public int getPhase() {
-        return 1; // 실행 순서를 정의: 낮은 숫자가 먼저 시작
+        return 2; // 실행 순서를 정의: 낮은 숫자가 먼저 시작
     }
 
     @Override

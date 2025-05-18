@@ -2,24 +2,20 @@ package com.intheeast.ioc.beandefinitioninheritance;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.intheeast.ioc.beandefinitioninheritance.config.AppConfig;
-import com.intheeast.ioc.beandefinitioninheritance.model.AnotherChildBean;
-import com.intheeast.ioc.beandefinitioninheritance.model.ChildBean;
+import com.intheeast.ioc.beandefinitioninheritance.config.BeanInheritanceConfig;
+import com.intheeast.ioc.beandefinitioninheritance.model.DerivedTestBean;
 
 
 public class Main {
 	
 	public static void main(String[] args) {
         AnnotationConfigApplicationContext context = 
-        		new AnnotationConfigApplicationContext(AppConfig.class);
+        		new AnnotationConfigApplicationContext(BeanInheritanceConfig.class);
 
-        System.out.println("\nRetrieving ChildBean...");
-        ChildBean childBean = context.getBean(ChildBean.class);
-        System.out.println(childBean);
-
-        System.out.println("\nRetrieving AnotherChildBean...");
-        AnotherChildBean anotherChildBean = context.getBean(AnotherChildBean.class);
-        System.out.println(anotherChildBean);
+        DerivedTestBean bean = context.getBean("inheritsWithDifferentClass", 
+        		DerivedTestBean.class);
+        System.out.println("✔ name: " + bean.getName());
+        System.out.println("✔ age: " + bean.getAge());
 
         context.close();
     }

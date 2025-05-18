@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.startupndshutdowncallbacks.model.CustomLifecycleBean;
+import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.startupndshutdowncallbacks.model.CustomSmartLifecycleBean1;
+import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.startupndshutdowncallbacks.model.CustomSmartLifecycleBean2;
 
 @Configuration
 public class AppConfig {
@@ -14,7 +16,12 @@ public class AppConfig {
     }
 
     @Bean
-    public CustomLifecycleBean smartLifecycleBean() {
-        return new CustomLifecycleBean();
+    public CustomSmartLifecycleBean1 smartLifecycleBean1() {
+        return new CustomSmartLifecycleBean1();
+    }
+    
+    @Bean
+    public CustomSmartLifecycleBean2 smartLifecycleBean2() {
+        return new CustomSmartLifecycleBean2();
     }
 }
