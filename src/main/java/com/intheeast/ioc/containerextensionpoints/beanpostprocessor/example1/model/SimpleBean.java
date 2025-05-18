@@ -1,5 +1,7 @@
 package com.intheeast.ioc.containerextensionpoints.beanpostprocessor.example1.model;
 
+import jakarta.annotation.PostConstruct;
+
 public class SimpleBean {
 
     private String message;
@@ -8,6 +10,11 @@ public class SimpleBean {
         this.message = message;
     }
 
+    @PostConstruct
+    public void init() {
+    	System.out.println("SimpleBean:init()");
+    }
+    
     public String getMessage() {
         return message;
     }
