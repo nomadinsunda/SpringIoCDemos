@@ -7,8 +7,11 @@ import com.intheeast.ioc.dependencies.methodinjection.lookupmethodInjection.mode
 
 public class MainApp {
 	
+	
+	
 	public static void main(String[] args) {
-        // Spring 애플리케이션 컨텍스트 생성 및 설정 클래스 로드
+     
+		// Spring 애플리케이션 컨텍스트 생성 및 설정 클래스 로드
         AnnotationConfigApplicationContext context = 
                 new AnnotationConfigApplicationContext(AppConfig.class);
 

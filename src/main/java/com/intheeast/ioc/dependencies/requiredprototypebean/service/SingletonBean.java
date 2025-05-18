@@ -20,8 +20,7 @@ public class SingletonBean {
 		// PrototypeBean의 scope가 prototype 이라는 것을  모른다고 가정.
 		PrototypeBean prototypeBean = this.objFactory.getObject();
 		counts = prototypeBean.getCount();
-		System.out.println("doExcute: counts=" + counts);
-		
+		System.out.println("doExcute: counts=" + counts);		
 	}
 
 }
