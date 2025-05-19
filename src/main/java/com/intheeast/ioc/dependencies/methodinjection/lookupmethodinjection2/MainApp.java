@@ -17,6 +17,7 @@ public class MainApp {
         
         OrderService orderService = context.getBean(OrderService.class);
 
+        // 누군가가 세번의 주문을 했음.
         orderService.processOrder("ORDER-1001", 150_000);
         orderService.processOrder("ORDER-1002", 275_000);
         orderService.processOrder("ORDER-1003", 89_900);

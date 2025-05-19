@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Application is running...");
 
         // 컨텍스트 종료
-        context.close(); // 모든 파괴 콜백이 실행됨
+        context.close(); // 모든 destroy 콜백 메서드가 실행됨
     }
 
 }

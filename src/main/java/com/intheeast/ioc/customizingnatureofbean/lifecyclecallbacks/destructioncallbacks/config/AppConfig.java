@@ -3,9 +3,7 @@ package com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.destruction
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.destructioncallbacks.model.AnotherExampleBean;
-import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.destructioncallbacks.model.ExampleBean;
-import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.destructioncallbacks.model.LifecycleBean;
+import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.destructioncallbacks.model.*;
 
 @Configuration
 public class AppConfig {
@@ -19,9 +17,14 @@ public class AppConfig {
     public AnotherExampleBean anotherExampleBean() {
         return new AnotherExampleBean();
     }
-
+    
     @Bean
-    public LifecycleBean lifecycleBean() {
-        return new LifecycleBean();
+    public OtherExampleBean otherExampleBean() {
+    	return new OtherExampleBean();
     }
+
+//    @Bean
+//    public LifecycleBean lifecycleBean() {
+//        return new LifecycleBean();
+//    }
 }

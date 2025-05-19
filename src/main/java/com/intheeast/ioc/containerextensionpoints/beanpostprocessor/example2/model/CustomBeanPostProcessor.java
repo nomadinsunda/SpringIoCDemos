@@ -1,8 +1,9 @@
 package com.intheeast.ioc.containerextensionpoints.beanpostprocessor.example2.model;
 
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.core.Ordered;
 
-public class CustomBeanPostProcessor implements BeanPostProcessor {
+public class CustomBeanPostProcessor implements BeanPostProcessor, Ordered {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) {
@@ -21,4 +22,10 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
         }
         return bean;
     }
+
+	@Override
+	public int getOrder() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

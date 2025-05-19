@@ -23,5 +23,6 @@ public class Main {
         System.out.println("Application is running...");
 
         // 컨텍스트를 명시적으로 닫지 않아도 종료 시 자동으로 호출됩니다.
+        context.close();
     }
 }

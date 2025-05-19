@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.intheeast.ioc.containerextensionpoints.beanpostprocessor.example1.model.CustomBeanPostProcessor;
+import com.intheeast.ioc.containerextensionpoints.beanpostprocessor.example1.model.OtherBean;
 import com.intheeast.ioc.containerextensionpoints.beanpostprocessor.example1.model.SimpleBean;
 
 @Configuration
@@ -16,6 +17,12 @@ public class AppConfig {
 
     @Bean
     public SimpleBean simpleBean() {
-        return new SimpleBean("Hello, BeanPostProcessor!");
+//        return new SimpleBean("Hello, BeanPostProcessor!");
+        return new SimpleBean("");
+    }
+    
+    @Bean
+    public OtherBean otherBean() {
+    	return new OtherBean("");
     }
 }

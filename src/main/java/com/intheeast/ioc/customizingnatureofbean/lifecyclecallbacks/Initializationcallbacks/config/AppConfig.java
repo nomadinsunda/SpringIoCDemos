@@ -3,8 +3,8 @@ package com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.Initializat
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.Initializationcallbacks.model.AnotherExampleBean;
-import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.Initializationcallbacks.model.ExampleBean;
+import com.intheeast.ioc.customizingnatureofbean.lifecyclecallbacks.Initializationcallbacks.model.*;
+
 
 @Configuration
 public class AppConfig {
@@ -17,5 +17,10 @@ public class AppConfig {
     @Bean
     public AnotherExampleBean anotherExampleBean() {
         return new AnotherExampleBean();
+    }
+    
+    @Bean
+    public OtherExampleBean otherExampleBean() {
+    	return new OtherExampleBean();
     }
 }

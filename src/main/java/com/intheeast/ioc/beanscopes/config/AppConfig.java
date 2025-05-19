@@ -26,7 +26,7 @@ public class AppConfig {
     }
 
     // Lifecycle Bean
-    @Bean
+    @Bean(initMethod="init")
     public MyBean myBean() {
         return new MyBean();
     }

@@ -1,5 +1,6 @@
 package com.intheeast.ioc.beanscopes;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.intheeast.ioc.beanscopes.config.AppConfig;
@@ -18,10 +19,11 @@ public class Main {
         DefaultAccountService singleton2 = context.getBean(DefaultAccountService.class);
         System.out.println("Are singleton instances the same? " + (singleton1 == singleton2));
 
-        System.out.println("\nRequesting PrototypeDependency (Prototype)...");
-        Object prototype1 = context.getBean("prototypeDependency");
-        Object prototype2 = context.getBean("prototypeDependency");
-        System.out.println("Are prototype instances the same? " + (prototype1 == prototype2));
+        // 두 빈간에 협력관계가 없음
+//        System.out.println("\nRequesting PrototypeDependency (Prototype)...");
+//        Object prototype1 = context.getBean("prototypeDependency");
+//        Object prototype2 = context.getBean("prototypeDependency");
+//        System.out.println("Are prototype instances the same? " + (prototype1 == prototype2));
 
         System.out.println("\nUsing SingletonWithPrototype...");
         SingletonWithPrototype singletonWithPrototype = context.getBean(SingletonWithPrototype.class);
