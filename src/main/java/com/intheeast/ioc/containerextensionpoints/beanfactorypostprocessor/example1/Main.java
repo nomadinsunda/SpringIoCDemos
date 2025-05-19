@@ -3,17 +3,18 @@ package com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.exam
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.config.AppConfig;
-import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model.ServiceStrategy;
+import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model.DataSource;
 
 public class Main {
 
     public static void main(String[] args) {
+        // ApplicationContext 생성
         AnnotationConfigApplicationContext context = 
         		new AnnotationConfigApplicationContext(AppConfig.class);
 
-        // 서비스 전략 빈 가져오기 및 실행
-        ServiceStrategy strategy = context.getBean(ServiceStrategy.class);
-        strategy.execute();
+        // DataSource 빈 가져오기
+        DataSource dataSource = context.getBean(DataSource.class);
+        System.out.println("Final DataSource: " + dataSource);
 
         // 컨텍스트 종료
         context.close();

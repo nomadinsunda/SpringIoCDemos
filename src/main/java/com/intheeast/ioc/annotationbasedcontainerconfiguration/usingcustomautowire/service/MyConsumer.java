@@ -1,9 +1,9 @@
-package com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire.service;
+package com.intheeast.ioc.annotationbasedcontainerconfiguration.usingcustomautowire.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire.marker.MyMarker;
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingcustomautowire.marker.MyMarker;
 
 @Component
 public class MyConsumer {

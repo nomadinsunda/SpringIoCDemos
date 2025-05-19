@@ -1,8 +1,9 @@
-package com.intheeast.ioc.annotationbasedcontainerconfiguration.generics;
+package com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.intheeast.ioc.annotationbasedcontainerconfiguration.generics.config.AppConfig;
-import com.intheeast.ioc.annotationbasedcontainerconfiguration.generics.service.StoreService;
+
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.config.AppConfig;
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.service.StoreService;
 
 
 public class Main {

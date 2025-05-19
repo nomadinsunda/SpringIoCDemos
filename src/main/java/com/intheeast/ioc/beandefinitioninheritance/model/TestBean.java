@@ -1,6 +1,6 @@
 package com.intheeast.ioc.beandefinitioninheritance.model;
 
-public class TestBean {
+public abstract class TestBean {
     private String name;
     private int age;
 

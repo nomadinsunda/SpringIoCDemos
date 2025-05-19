@@ -1,18 +1,18 @@
-package com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire.config;
+package com.intheeast.ioc.annotationbasedcontainerconfiguration.usingcustomautowire.config;
 
 import org.springframework.beans.factory.annotation.CustomAutowireConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire.marker.MyMarker;
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingcustomautowire.marker.MyMarker;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 @Configuration
-@ComponentScan(basePackages = "com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire")
+@ComponentScan(basePackages = "com.intheeast.ioc.annotationbasedcontainerconfiguration.usingcustomautowire")
 public class AppConfig {
 
     // BeanFactoryPostProcessor는 static 메서드로 등록하는 편이 권장됩니다.

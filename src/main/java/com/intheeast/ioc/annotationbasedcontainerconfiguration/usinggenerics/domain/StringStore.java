@@ -1,4 +1,4 @@
-package com.intheeast.ioc.annotationbasedcontainerconfiguration.generics.domain;
+package com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.domain;
 
 import java.util.ArrayList;
 import java.util.List;

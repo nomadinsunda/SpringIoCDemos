@@ -1,30 +1,26 @@
 package com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.config;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model.CustomBeanFactoryPostProcessor;
-import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model.ServiceStrategy;
+import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model.DataSource;
+import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.postprocessor.DataSourcePostProcessor;
 
 @Configuration
-@PropertySource("classpath:strategy.properties")
 public class AppConfig {
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
+	@Bean
+    public static DataSourcePostProcessor dataSourcePostProcessor() {
+        return new DataSourcePostProcessor();
     }
 
     @Bean
-    public static CustomBeanFactoryPostProcessor customBeanFactoryPostProcessor() {
-        return new CustomBeanFactoryPostProcessor();
-    }
-
-    @Bean
-    public ServiceStrategy serviceStrategy() {
-        return new ServiceStrategy();
+    public DataSource dataSource() {
+    	// 초기값 (나중에 BeanFactoryPostProcessor가 덮어씀)
+        DataSource ds = new DataSource();
+        ds.setDriverClassName("original.Driver");
+        ds.setUrl("original:url");
+        ds.setUsername("original_user");
+        return ds;
     }
 }

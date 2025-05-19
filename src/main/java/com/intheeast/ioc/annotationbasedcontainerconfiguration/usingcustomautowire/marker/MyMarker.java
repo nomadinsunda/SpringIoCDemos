@@ -1,4 +1,4 @@
-package com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire.marker;
+package com.intheeast.ioc.annotationbasedcontainerconfiguration.usingcustomautowire.marker;
 
 import java.lang.annotation.*;
 

@@ -1,9 +1,9 @@
-package com.intheeast.ioc.annotationbasedcontainerconfiguration.generics.service;
+package com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.intheeast.ioc.annotationbasedcontainerconfiguration.generics.domain.Store;
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.domain.Store;
 
 import java.util.List;
 

@@ -1,8 +1,9 @@
-package com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire;
+package com.intheeast.ioc.annotationbasedcontainerconfiguration.usingcustomautowire;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire.config.AppConfig;
-import com.intheeast.ioc.annotationbasedcontainerconfiguration.customautowire.service.MyConsumer;
+
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingcustomautowire.config.AppConfig;
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingcustomautowire.service.MyConsumer;
 
 public class Main {
     public static void main(String[] args) {

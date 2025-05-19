@@ -1,4 +1,4 @@
-package com.intheeast.ioc.annotationbasedcontainerconfiguration.generics.domain;
+package com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.domain;
 
 public interface Store<T> {
     void addItem(T item);

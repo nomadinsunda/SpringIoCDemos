@@ -24,7 +24,7 @@ public class BeanInheritanceConfig {
                 RootBeanDefinition parent = new RootBeanDefinition();
                 parent.setBeanClass(TestBean.class);
                 // setAbstract메서드에 true 아규먼트를 전달하면,
-                // 템플릿 용도로만 사용되고 빈으로 생성되지 않습니다
+                // 템플릿 용도로만 사용되고 빈으로 생성되지 않음.
                 parent.setAbstract(true);
                 parent.getPropertyValues().add("name", "parent");
                 parent.getPropertyValues().add("age", 1);

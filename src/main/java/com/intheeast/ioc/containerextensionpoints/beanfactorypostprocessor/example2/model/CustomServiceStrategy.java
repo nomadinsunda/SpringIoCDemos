@@ -1,4 +1,4 @@
-package com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model;
+package com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example2.model;
 
 public class CustomServiceStrategy extends ServiceStrategy {
 
