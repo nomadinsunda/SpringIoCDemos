@@ -15,6 +15,10 @@ import com.intheeast.ioc.beandefinitioninheritance.service.MyService;
 
 @Configuration
 public class BeanInheritanceConfig {
+	
+	public BeanInheritanceConfig() {
+		System.out.println("BeanInheritanceConfig constructor");
+	}
 
 	@Bean
     public static BeanDefinitionRegistryPostProcessor beanDefinitionInheritanceProcessor() {
@@ -31,16 +35,14 @@ public class BeanInheritanceConfig {
                 parent.getPropertyValues().add("name", "parent");
                 parent.getPropertyValues().add("age", 1);
                 parent.setInitMethodName("init");
-
                 registry.registerBeanDefinition("inheritedTestBean", parent);
 
                 // 자식 빈 정의 생성
                 GenericBeanDefinition child = new GenericBeanDefinition();
                 child.setParentName("inheritedTestBean"); // 부모 이름 지정
                 child.setBeanClass(DerivedTestBean.class);
-                child.getPropertyValues().add("name", "override"); // 상속된 name을 override
+                child.getPropertyValues().add("name", "child"); // 상속된 name을 override
                 child.setInitMethodName("initialize");
-
                 registry.registerBeanDefinition("inheritsWithDifferentClass", child);
             }
 
