@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model.DataSource;
+import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.model.User;
 import com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example1.postprocessor.DataSourcePostProcessor;
 
 @Configuration
@@ -22,5 +23,10 @@ public class AppConfig {
         ds.setUrl("original:url");
         ds.setUsername("original_user");
         return ds;
+    }
+    
+    @Bean
+    public User user() {
+    	return new User();    	
     }
 }

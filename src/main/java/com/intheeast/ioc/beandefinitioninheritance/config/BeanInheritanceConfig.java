@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Configuration;
 
 import com.intheeast.ioc.beandefinitioninheritance.model.DerivedTestBean;
 import com.intheeast.ioc.beandefinitioninheritance.model.TestBean;
+import com.intheeast.ioc.beandefinitioninheritance.repository.YourRepository;
+import com.intheeast.ioc.beandefinitioninheritance.service.MyService;
 
 @Configuration
 public class BeanInheritanceConfig {
@@ -48,4 +50,14 @@ public class BeanInheritanceConfig {
             }
         };
     }
+	
+	@Bean
+	public MyService myService() {
+		return new MyService();
+	}
+	
+	@Bean
+	public YourRepository yourRepository() {
+		return new YourRepository();
+	}
 }

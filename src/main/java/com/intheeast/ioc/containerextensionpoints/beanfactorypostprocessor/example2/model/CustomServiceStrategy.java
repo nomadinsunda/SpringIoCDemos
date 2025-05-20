@@ -1,5 +1,6 @@
 package com.intheeast.ioc.containerextensionpoints.beanfactorypostprocessor.example2.model;
 
+
 public class CustomServiceStrategy extends ServiceStrategy {
 
     @Override

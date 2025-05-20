@@ -10,7 +10,8 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     @Override
-    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) 
+    		throws BeansException {
     	if (beanFactory.containsBeanDefinition("serviceStrategy")) {
             ((BeanDefinitionRegistry) beanFactory).removeBeanDefinition("serviceStrategy");
 
