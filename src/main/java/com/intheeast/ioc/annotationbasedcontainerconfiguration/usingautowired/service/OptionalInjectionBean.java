@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.finder.MovieFinder;
 
 import jakarta.annotation.Nullable;
+import jakarta.inject.Inject;
 
 // import javax.inject.Inject; // JSR-330 @Inject 사용 예시 가능
 import java.util.Optional;
@@ -15,11 +16,15 @@ import java.util.Optional;
 public class OptionalInjectionBean {
 
     // 1) @Autowired(required=false)
-    @Autowired(required = false)
+	// Declares whether the annotated dependency is required.
+	// required 를 false로 설정하였기 때문에,
+	// optionalField 필드에 주입할 MovieFinder 인터페이스 구체가 없을 경우,
+	// UnsatisfiedDependencyException Exception이 발생하지 않고 null이 주입됨.
+    @Inject
     private MovieFinder optionalField; // 주입 실패 시 null
 
     // 2) Optional 파라미터
-    @Autowired
+    @Inject//@Autowired
     public void setOptionalFinder(Optional<MovieFinder> optionalFinder) {
         optionalFinder.ifPresentOrElse(
             finder -> System.out.println("[OptionalInjectionBean] setOptionalFinder: " + finder.findAll()),
@@ -38,10 +43,10 @@ public class OptionalInjectionBean {
     }
 
     public void printOptionalField() {
-        if (optionalField != null) {
-            System.out.println("[OptionalInjectionBean] optionalField: " + optionalField.findAll());
-        } else {
-            System.out.println("[OptionalInjectionBean] optionalField is null - no bean injected");
-        }
+//        if (optionalField != null) {
+//            System.out.println("[OptionalInjectionBean] optionalField: " + optionalField.findAll());
+//        } else {
+//            System.out.println("[OptionalInjectionBean] optionalField is null - no bean injected");
+//        }
     }
 }

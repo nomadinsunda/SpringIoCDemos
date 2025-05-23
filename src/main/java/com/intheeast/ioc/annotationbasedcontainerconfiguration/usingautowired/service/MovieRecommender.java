@@ -1,27 +1,31 @@
 package com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.dao.CustomerPreferenceDao;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.util.MovieCatalog;
 
-@Service
+// Service : 비즈니스 로직을 구현하는 컴포넌트
+@Service // StereoType:이 컴포넌트(다음 클래스의 인스턴스)는 Service 목적을 두고 있다. 
 public class MovieRecommender {
 
     // 1) 필드 주입 예시
     @Autowired
     private MovieCatalog movieCatalog;  // ActionMovieCatalog 또는 DramaMovieCatalog 중 자동 매칭
 
+   
     private final CustomerPreferenceDao customerPreferenceDao;
 
     // 2) 생성자 주입 예시
     @Autowired
     public MovieRecommender(CustomerPreferenceDao customerPreferenceDao) {
         this.customerPreferenceDao = customerPreferenceDao;
+        
     }
 
-    // 3) 임의 메서드(여러 인자) 주입 예시
+    // 3)일반 메서드(여러 아규먼트) 주입 예시
     @Autowired
     public void prepare(MovieCatalog movieCatalog,
                         CustomerPreferenceDao customerPreferenceDao) {

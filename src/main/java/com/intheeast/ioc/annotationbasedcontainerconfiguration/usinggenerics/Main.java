@@ -8,6 +8,8 @@ import com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.ser
 
 public class Main {
     public static void main(String[] args) {
+    	//String hello = "hello";
+    	//String world = hello;
 
         // 스프링 컨텍스트 초기화 (Java Config)
         AnnotationConfigApplicationContext context =

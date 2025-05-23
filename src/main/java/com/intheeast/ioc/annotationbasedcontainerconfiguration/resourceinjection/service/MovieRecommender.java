@@ -7,7 +7,7 @@ import com.intheeast.ioc.annotationbasedcontainerconfiguration.resourceinjection
 
 public class MovieRecommender {
 
-    // 1) @Resource without name => 우선 "customerPreferenceDao" 라는 Bean을 찾음
+    // 1) @Resource without name => 빈의 타입이 CustomerPreferenceDao 인 빈을 찾음
     @Resource
     private CustomerPreferenceDao customerPreferenceDao;
 

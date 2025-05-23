@@ -1,8 +1,10 @@
 package com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.finder;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier("movieFinder2")
 public class OptionalMovieFinderImpl implements MovieFinder {
 
     @Override

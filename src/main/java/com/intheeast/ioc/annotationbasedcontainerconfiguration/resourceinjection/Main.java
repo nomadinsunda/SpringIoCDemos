@@ -3,6 +3,7 @@ package com.intheeast.ioc.annotationbasedcontainerconfiguration.resourceinjectio
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.resourceinjection.config.AppConfig;
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.resourceinjection.domain.CustomerPreferenceDao;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.resourceinjection.service.MovieRecommender;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.resourceinjection.service.SimpleMovieLister;
 
@@ -11,6 +12,10 @@ public class Main {
         // 자바 기반 설정으로 스프링 컨텍스트 생성
         AnnotationConfigApplicationContext context =
             new AnnotationConfigApplicationContext(AppConfig.class);
+        
+        // 0) CustomerPreferenceDao 사용 예시
+        CustomerPreferenceDao dao = 
+        		(CustomerPreferenceDao) context.getBean("customerPreferenceDao2");
 
         // 1) SimpleMovieLister 사용 예시
         SimpleMovieLister lister = context.getBean(SimpleMovieLister.class);

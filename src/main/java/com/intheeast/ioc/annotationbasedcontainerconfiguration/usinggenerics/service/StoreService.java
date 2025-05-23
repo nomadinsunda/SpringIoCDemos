@@ -3,7 +3,9 @@ package com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.se
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.domain.IntegerStore;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.domain.Store;
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.domain.StringStore;
 
 import java.util.List;
 
@@ -12,11 +14,11 @@ public class StoreService {
 
     // 단일 제네릭 주입 (Store<String>)
     @Autowired
-    private Store<String> stringStore;  // stringStore()가 주입됨
+    private StringStore/*Store<String>*/ stringStore;  // stringStore()가 주입됨
 
     // 단일 제네릭 주입 (Store<Integer>)
     @Autowired
-    private Store<Integer> integerStore; // integerStore()가 주입됨
+    private IntegerStore/*Store<Integer>*/ integerStore; // integerStore()가 주입됨
 
     // 컬렉션 주입 (List<Store<Integer>>)
     // <Integer>를 구현한 Store들만 리스트로 주입됨

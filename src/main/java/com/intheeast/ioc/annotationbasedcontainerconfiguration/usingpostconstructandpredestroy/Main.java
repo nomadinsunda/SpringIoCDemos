@@ -17,7 +17,7 @@ public class Main {
         System.out.println("[Main] 영화 캐싱 상태를 확인 또는 사용 가능...");
         
         // 컨텍스트를 닫으면 @PreDestroy가 호출됨
-        context.close();
+        context.close();/////////////////////
         System.out.println("=== Spring Legacy 예제 종료 ===");
     }
 }

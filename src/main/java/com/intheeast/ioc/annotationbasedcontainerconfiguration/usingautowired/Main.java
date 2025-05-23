@@ -15,8 +15,14 @@ import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.se
 
 public class Main {
 	
+	// 참조 변수가 null을 가질 수가 있는데,
+	// 만약 참조 변수가 null일 때, 이 참조 변수에 액세스 멤버 연산자를 사용할 경우
+	// NullPointerException이 발생함...
+	// : 사전에 예방할 수 있도록 참조 변수를 wrapping한다...
 	public static Optional<String> findNameById(int id) {
         if (id == 1) {
+        	// of 메서드에게 전달되는 것은 "홍길동"이라는 문자열 리터럴인가요?
+        	// : "홍길동" 문자열 리터럴을 위해서 만들어진 String 클래스 인스턴스에 대한 참조값이 전달
             return Optional.of("홍길동");  // 값이 있을 때
         } else {
             return Optional.empty();      // 값이 없을 때
@@ -42,9 +48,7 @@ public class Main {
             System.out.println("필수 이름: " + mustExistName);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-        }
-        
-        
+        }        
     	
         // 1) Java 기반 설정 클래스(AppConfig)를 이용한 ApplicationContext 로딩
         AnnotationConfigApplicationContext context = 

@@ -12,7 +12,7 @@ import com.intheeast.ioc.annotationbasedcontainerconfiguration.finetuningannotat
 public class AppConfig {
 
     @Bean
-    @Genre("Action")
+    @Genre("Action") // @Genre는 @Qualifier를 상속
     public MovieCatalog actionCatalog() {
         return new SimpleMovieCatalog("Action Catalog");
     }

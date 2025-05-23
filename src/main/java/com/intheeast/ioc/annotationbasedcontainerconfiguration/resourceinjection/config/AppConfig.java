@@ -20,7 +20,7 @@ public class AppConfig {
 
     // 2) 이름이 "customerPreferenceDao"인 Bean
     @Bean
-    public CustomerPreferenceDao customerPreferenceDao() {
+    public CustomerPreferenceDao customerPreferenceDao2() {
         return new CustomerPreferenceDao();
     }
 

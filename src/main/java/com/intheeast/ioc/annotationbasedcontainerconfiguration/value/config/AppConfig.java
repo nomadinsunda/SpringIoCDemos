@@ -22,7 +22,7 @@ public class AppConfig {
         // 엄격모드: 값이 없으면 에러 발생
         // 원하는 경우 setIgnoreUnresolvablePlaceholders(false)로 가능
         PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
-        configurer.setIgnoreUnresolvablePlaceholders(false); 
+        //configurer.setIgnoreUnresolvablePlaceholders(false); 
         return configurer;
     }
 
@@ -32,7 +32,8 @@ public class AppConfig {
      */
     @Bean
     public ConversionService conversionService() {
-        DefaultFormattingConversionService cs = new DefaultFormattingConversionService();
+        DefaultFormattingConversionService cs = 
+        		new DefaultFormattingConversionService();
         cs.addConverter(new MyCustomConverter()); 
         return cs;
     }
