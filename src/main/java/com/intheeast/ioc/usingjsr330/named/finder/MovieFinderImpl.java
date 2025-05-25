@@ -1,0 +1,12 @@
+package com.intheeast.ioc.usingjsr330.named.finder;
+
+import org.springframework.stereotype.Component;
+
+@Component // movieFinderImpl
+public class MovieFinderImpl implements MovieFinder {
+
+    @Override
+    public String findAll() {
+        return "MovieFinderImpl: Searching for movies...";
+    }
+}
