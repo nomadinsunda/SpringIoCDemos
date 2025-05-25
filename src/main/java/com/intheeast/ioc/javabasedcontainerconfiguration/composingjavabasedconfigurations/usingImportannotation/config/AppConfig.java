@@ -1,0 +1,12 @@
+package com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfigurations.usingImportannotation.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+
+import com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfigurations.usingImportannotation.imports.*;
+
+@Configuration
+@Import({ConfigA.class, ConfigB.class, MyService.class, MyRepository.class})
+public class AppConfig {
+	// 필요한 경우 다른 @Bean도 선언 가능
+}
