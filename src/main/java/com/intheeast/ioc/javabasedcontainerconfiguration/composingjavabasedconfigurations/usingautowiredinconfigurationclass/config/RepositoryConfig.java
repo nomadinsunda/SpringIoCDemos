@@ -10,11 +10,12 @@ import javax.sql.DataSource;
 @Configuration
 public class RepositoryConfig {
 
-	@Autowired
-	private DataSource dataSource;
+	// SimpleDriverDataSource가 주입될 것임.
+//	@Autowired
+//	private DataSource dataSource;
 
 	@Bean
-	public AccountRepository accountRepository() {
+	public AccountRepository accountRepository(DataSource dataSource) {
 		return new JdbcAccountRepository(dataSource);
 	}
 }

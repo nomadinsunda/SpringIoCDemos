@@ -1,6 +1,7 @@
 package com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfigurations.usingautowiredinconfigurationclass.config;
 
 
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
@@ -38,8 +39,11 @@ public class SystemTestConfig {
 	
 	@PostConstruct
     public void init() {
+		System.out.println("✅ ++ SystemTestConfig initialized");
         // 이 메서드 내에서 동일한 구성 클래스의 비정적 @Bean 메서드에 접근하지 마세요
         // 예: dataSource(); (비정적 메서드 접근 금지)
-        System.out.println("✅ SystemTestConfig initialized");
+		DataSource dataSource = dataSource();
+		BeanPostProcessor beanPostProcessor = ProcessorConfig.customBeanPostProcessor();
+        System.out.println("✅ -- SystemTestConfig initialized");
     }
 }

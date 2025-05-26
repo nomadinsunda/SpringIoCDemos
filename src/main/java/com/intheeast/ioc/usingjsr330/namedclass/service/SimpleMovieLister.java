@@ -5,6 +5,7 @@ import com.intheeast.ioc.usingjsr330.namedclass.finder.MovieFinder;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
+//@Component 어노테이션 대신에, simpleMovieLister
 @Named("movieListener")  // @ManagedBean("movieListener") could be used as well
 public class SimpleMovieLister {
 

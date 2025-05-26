@@ -25,8 +25,8 @@ public class Main {
 
 		System.out.println("\n▶▶▶ @Component 방식");
 		var ctx3 = new AnnotationConfigApplicationContext("com.intheeast.ioc.javabasedcontainerconfiguration.usingtheconfigurationannotation.furtherinformation.config");
-		ClientService s3a = ctx3.getBean("clientService1", ClientService.class);
-		ClientService s3b = ctx3.getBean("clientService2", ClientService.class);
+		ClientService s3a = ctx3.getBean("clientService3", ClientService.class);
+		ClientService s3b = ctx3.getBean("clientService4", ClientService.class);
 		s3a.process();
 		s3b.process();
 		ctx3.close();

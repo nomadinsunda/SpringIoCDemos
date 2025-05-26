@@ -1,5 +1,6 @@
 package com.intheeast.ioc.javabasedcontainerconfiguration.instantiatingthespringcontainer.simpleconstruction.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.intheeast.ioc.javabasedcontainerconfiguration.instantiatingthespringcontainer.simpleconstruction.dependency.*;
@@ -11,6 +12,7 @@ public class MyServiceImpl implements MyService {
     private final Dependency2 d2;
 
     // 생성자 주입
+    @Autowired
     public MyServiceImpl(Dependency1 d1, Dependency2 d2) {
         this.d1 = d1;
         this.d2 = d2;

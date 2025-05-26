@@ -1,5 +1,6 @@
 package com.intheeast.ioc.javabasedcontainerconfiguration.usingtheconfigurationannotation.lookupmethodinjection.model;
 
+import org.springframework.beans.factory.annotation.Lookup;
 
 public abstract class CommandManager {
 
@@ -10,5 +11,6 @@ public abstract class CommandManager {
 	}
 
 	// 반드시 오버라이드해야 함
+	@Lookup
 	protected abstract Command createCommand();
 }

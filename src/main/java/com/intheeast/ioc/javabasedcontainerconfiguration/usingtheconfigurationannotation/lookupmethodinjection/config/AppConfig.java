@@ -6,12 +6,13 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 
 import com.intheeast.ioc.javabasedcontainerconfiguration.usingtheconfigurationannotation.lookupmethodinjection.model.*;
 
-@Configuration
+@Configuration/*(proxyBeanMethods=true)*/
 public class AppConfig {
 
 	@Bean
 	@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 	public AsyncCommand asyncCommand() {
+		System.out.println("asyncCommand()");
 		return new AsyncCommand();
 	}
 

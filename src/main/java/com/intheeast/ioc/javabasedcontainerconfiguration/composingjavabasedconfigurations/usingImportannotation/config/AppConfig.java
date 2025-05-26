@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Import;
 
 import com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfigurations.usingImportannotation.imports.*;
 
+//@ComponentScan을 사용하지 않고, MyService와 MyRepository 빈을 등록할 수 있음.
 @Configuration
 @Import({ConfigA.class, ConfigB.class, MyService.class, MyRepository.class})
 public class AppConfig {

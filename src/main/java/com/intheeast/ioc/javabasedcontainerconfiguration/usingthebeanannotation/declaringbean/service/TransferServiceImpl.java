@@ -1,6 +1,7 @@
 package com.intheeast.ioc.javabasedcontainerconfiguration.usingthebeanannotation.declaringbean.service;
 
-public class TransferServiceImpl implements TransferService, Auditable, Loggable{
+public class TransferServiceImpl 
+		implements TransferService, Auditable, Loggable{
 
 	@Override
 	public void transfer() {

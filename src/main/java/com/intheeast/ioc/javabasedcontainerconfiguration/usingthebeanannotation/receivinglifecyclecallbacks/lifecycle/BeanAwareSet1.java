@@ -3,11 +3,19 @@ package com.intheeast.ioc.javabasedcontainerconfiguration.usingthebeanannotation
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 public class BeanAwareSet1 implements BeanNameAware, BeanFactoryAware {
 
 	private String beanName;
 	private BeanFactory beanFactory;
-
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("BeanAwareSet1:init");
+	}
+	
 	@Override
 	public void setBeanName(String name) {
 		this.beanName = name;
@@ -30,5 +38,10 @@ public class BeanAwareSet1 implements BeanNameAware, BeanFactoryAware {
 		} else {
 			System.out.println("❌ beanInit 빈이 존재하지 않음");
 		}
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("BeanAwareSet1:destroy");
 	}
 }

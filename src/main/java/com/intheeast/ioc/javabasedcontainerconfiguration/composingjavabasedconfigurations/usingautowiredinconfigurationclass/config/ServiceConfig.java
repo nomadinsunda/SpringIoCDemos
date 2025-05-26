@@ -8,6 +8,7 @@ import com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfi
 @Configuration
 public class ServiceConfig {
 
+	// JdbcAccountRepository가 주입될 것임.
 	@Autowired
 	private AccountRepository accountRepository;  // RepositoryConfig에서 주입됨
 

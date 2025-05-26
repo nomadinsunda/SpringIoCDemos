@@ -15,14 +15,14 @@ public class ComponentStyleConfig {
 	}
 
 	@Bean
-	public ClientService clientService1() {
+	public ClientService clientService3() {
 		ClientServiceImpl service = new ClientServiceImpl();
 		service.setClientDao(clientDao());
 		return service;
 	}
 
 	@Bean
-	public ClientService clientService2() {
+	public ClientService clientService4() {
 		ClientServiceImpl service = new ClientServiceImpl();
 		service.setClientDao(clientDao());
 		return service;

@@ -12,6 +12,10 @@ import com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfi
 @Configuration
 //@ComponentScan({"com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfigurations.usingautowiredinconfigurationclass"})
 public class ProcessorConfig {
+	
+	public ProcessorConfig() {
+		System.out.println("ProcessorConfig:ProcessorConfig");
+	}
 
     // 정적 @Bean 메서드로 BeanPostProcessor 정의
     @Bean

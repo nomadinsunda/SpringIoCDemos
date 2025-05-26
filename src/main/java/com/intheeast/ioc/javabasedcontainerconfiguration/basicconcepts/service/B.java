@@ -6,6 +6,6 @@ public class B {
 
 	public B(A a) {
 		this.a = a;
-		System.out.println("B 인스턴스 생성됨: A = " + a);
+		System.out.println("B 인스턴스 생성됨: 전달된 A = " + a);
 	}
 }

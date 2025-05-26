@@ -1,17 +1,17 @@
 package com.intheeast.ioc.javabasedcontainerconfiguration.usingthebeanannotation.specifyingbeanscope.scope;
 
-import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.ObjectFactory;
 
 public class EncryptorManagerProvider {
 
-	private final ObjectProvider<Encryptor> encryptorProvider;
+	private final ObjectFactory<Encryptor> encryptorFactory;
 
-	public EncryptorManagerProvider(ObjectProvider<Encryptor> encryptorProvider) {
-		this.encryptorProvider = encryptorProvider;
+	public EncryptorManagerProvider(ObjectFactory<Encryptor> encryptorFactory) {
+		this.encryptorFactory = encryptorFactory;
 	}
 
 	public void process(String data) {
-		Encryptor encryptor = encryptorProvider.getObject();  // 매번 새 Encryptor
+		Encryptor encryptor = encryptorFactory.getObject();  // 매번 새 Encryptor
 		encryptor.encrypt(data);
 	}
 }
