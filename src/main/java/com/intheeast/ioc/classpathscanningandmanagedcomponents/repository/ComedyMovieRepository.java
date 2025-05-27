@@ -6,7 +6,7 @@ import com.intheeast.ioc.classpathscanningandmanagedcomponents.domain.Movie;
 
 import java.util.List;
 
-@Component
+@Component("comedyMovieRepo")
 public class ComedyMovieRepository implements MovieRepository {
     @Override
     public List<Movie> findMovies() {

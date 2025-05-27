@@ -11,7 +11,7 @@ import com.intheeast.ioc.dependencies.dependencyinjection.service.SimpleMovieFin
 import com.intheeast.ioc.dependencies.dependencyinjection.service.SimpleMovieLister;
 
 
-@Configuration
+@Configuration(proxyBeanMethods=true)
 @ComponentScan({"com.intheeast.ioc.dependencies.dependencyinjection"})
 public class AppConfig {
 
@@ -23,9 +23,9 @@ public class AppConfig {
 
     // Define SimpleMovieLister bean
     @Bean
-    public SimpleMovieLister movieLister(MovieFinder movieFinder) {
+    public SimpleMovieLister movieLister(/*MovieFinder movieFinder*/) {
     	SimpleMovieLister movieLister = new SimpleMovieLister();
-        movieLister.setMovieFinder(movieFinder); // Setter-based DI
+        movieLister.setMovieFinder(movieFinder()); // Setter-based DI
         return movieLister;
         
         //return new SimpleMovieLister(movieFinder);

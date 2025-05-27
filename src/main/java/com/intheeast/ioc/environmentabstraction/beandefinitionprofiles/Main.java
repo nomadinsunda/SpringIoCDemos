@@ -12,12 +12,15 @@ public class Main {
         		new AnnotationConfigApplicationContext();
 
         // 2. 활성화할 프로필 설정 (예: default, dev, prod)
-        ctx.getEnvironment().setActiveProfiles("default");
+        //ctx.getEnvironment().setActiveProfiles("default");
 //        ctx.getEnvironment().setActiveProfiles("dev");
 //        ctx.getEnvironment().setActiveProfiles("prod");         
 
-        // 3. 설정 클래스 등록
-        ctx.register(AppConfig.class, DevDataSourceConfig.class, ProdDataSourceConfig.class);
+        // 3. 구성 클래스 등록
+        ctx.register(AppConfig.class, 
+        		DefaultDataConfig.class,
+        		DevDataSourceConfig.class, 
+        		ProdDataSourceConfig.class);
 
         // 4. 컨테이너 초기화 (빈 등록 및 생성)
         ctx.refresh();

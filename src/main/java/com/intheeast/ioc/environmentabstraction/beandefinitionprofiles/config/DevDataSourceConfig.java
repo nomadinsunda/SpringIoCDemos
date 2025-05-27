@@ -6,7 +6,7 @@ import org.springframework.jdbc.datasource.embedded.*;
 import javax.sql.DataSource;
 
 @Configuration
-@Profile("dev")
+@Profile("dev") // development
 public class DevDataSourceConfig {
 
     @Bean

@@ -7,7 +7,7 @@ import javax.naming.*;
 import javax.sql.DataSource;
 
 @Configuration
-@Profile("prod")
+@Profile("prod") // production
 public class ProdDataSourceConfig {
 
     @Bean(destroyMethod = "")  // JNDI 관리 객체는 Spring이 종료 시 닫지 않음
