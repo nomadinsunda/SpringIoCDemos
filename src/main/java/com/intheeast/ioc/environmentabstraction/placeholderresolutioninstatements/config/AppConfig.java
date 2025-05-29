@@ -2,8 +2,10 @@ package com.intheeast.ioc.environmentabstraction.placeholderresolutioninstatemen
 
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.Resource;
 
 import com.intheeast.ioc.environmentabstraction.placeholderresolutioninstatements.domain.ConfigClass;
 
@@ -20,4 +22,15 @@ public class AppConfig {
         String resourcePath = "com/bank/service/" + customer + "-config.xml";
         return new ConfigClass(resourcePath);
     }
+    
+//    @SuppressWarnings("deprecation")
+//	@Bean
+//    public PropertySourcesPlaceholderConfigurer propertyConfigure() {
+//    	PropertyPlaceholderConfigurer propertyPlaceholderConfigurer = 
+//    			new PropertyPlaceholderConfigurer();
+//    	Resource location = new ResourceLoader(ClassPath("application.properties"));
+//    	propertyPlaceholderConfigurer.setLocation();
+//    	
+//    	return propertyPlaceholderConfigurer;
+//    }
 }

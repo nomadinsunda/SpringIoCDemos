@@ -7,5 +7,6 @@ import java.lang.annotation.RetentionPolicy;
 
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
+//@Component
 public @interface Online {
 }

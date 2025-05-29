@@ -37,6 +37,7 @@ public class AppConfig {
     @Bean(name = "applicationEventMulticaster")
     public SimpleApplicationEventMulticaster asyncEventMulticaster() {
         SimpleApplicationEventMulticaster multicaster = new SimpleApplicationEventMulticaster();
+        //
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(3);
         executor.setMaxPoolSize(5);

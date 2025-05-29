@@ -7,8 +7,7 @@ import com.intheeast.ioc.classpathscanningandmanagedcomponents.qualifier.Online;
 
 import java.util.List;
 
-@Component
-@Online
+@Component // actionMovieRepository
 public class ActionMovieRepository implements MovieRepository {
 	
 	public ActionMovieRepository() {

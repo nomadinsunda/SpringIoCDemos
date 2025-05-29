@@ -133,11 +133,11 @@
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-webmvc</artifactId>
-    <version>6.2.6</version>
-</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>6.2.6</version>
+	</dependency>
 
   </dependencies>
   

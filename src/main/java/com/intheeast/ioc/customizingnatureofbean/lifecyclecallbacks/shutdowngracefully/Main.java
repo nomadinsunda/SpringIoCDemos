@@ -13,7 +13,7 @@ public class Main {
         ConfigurableApplicationContext context = 
         		new AnnotationConfigApplicationContext(AppConfig.class);
 
-        // Shutdown Hook 등록
+        // JVM Shutdown Hook 등록
         context.registerShutdownHook();
 
         // 애플리케이션 로직 실행
