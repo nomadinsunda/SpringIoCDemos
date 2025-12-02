@@ -6,7 +6,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.intheeast.ioc.dependencies.lazy.config.AppConfig;
 
 public class Main {
+	
+	public static void xxx() {
+		int a = 0;
+		a = 3;
+	}
+	
     public static void main(String[] args) {
+    	
+    	//a = 4;
+    	
         System.out.println("Initializing ApplicationContext...");
         
         ApplicationContext context = 

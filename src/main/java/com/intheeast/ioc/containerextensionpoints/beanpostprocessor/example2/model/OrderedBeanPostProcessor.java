@@ -13,7 +13,7 @@ public class OrderedBeanPostProcessor implements BeanPostProcessor, Ordered {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) {
         if (bean instanceof ExampleBean) {
-            System.out.println("OrderedBeanPostProcessor - Before Initialization: " + beanName);
+            System.out.println("OrderedBeanPostProcessor - postProcessBeforeInitialization: " + beanName);
         }
         return bean;
     }
@@ -21,7 +21,7 @@ public class OrderedBeanPostProcessor implements BeanPostProcessor, Ordered {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) {
         if (bean instanceof ExampleBean) {
-            System.out.println("OrderedBeanPostProcessor - After Initialization: " + beanName);
+            System.out.println("OrderedBeanPostProcessor - postProcessAfterInitialization: " + beanName);
         }
         return bean;
     }

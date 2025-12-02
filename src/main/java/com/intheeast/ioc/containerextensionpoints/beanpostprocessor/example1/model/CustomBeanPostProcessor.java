@@ -7,7 +7,8 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) {
-        if (bean instanceof SimpleBean) {
+        
+    	if (bean instanceof SimpleBean) {
             SimpleBean simpleBean = (SimpleBean) bean;
 
             // 빈 초기화 전 상태 확인 및 수정

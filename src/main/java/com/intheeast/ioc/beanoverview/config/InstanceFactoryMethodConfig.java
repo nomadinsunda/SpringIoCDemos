@@ -3,46 +3,35 @@ package com.intheeast.ioc.beanoverview.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.intheeast.ioc.beanoverview.interfaces.PaymentService;
+import com.intheeast.ioc.beanoverview.service.CardPaymentService;
+import com.intheeast.ioc.beanoverview.service.PaypalPaymentService;
+import com.intheeast.ioc.beanoverview.service.ServiceLocator;
+
 @Configuration
 public class InstanceFactoryMethodConfig {
 
     @Bean
-    public DefaultServiceLocator serviceLocator() {
-        return new DefaultServiceLocator(); // 팩토리 Bean 생성
+    public ServiceLocator serviceLocator() {
+    	
+    	ServiceLocator locator = 
+    			ServiceLocator.getInstance(); // 팩토리 Bean 생성
+
+    	locator.registerFactory(PaypalPaymentService.class, PaypalPaymentService::new);
+
+        locator.registerInstance(CardPaymentService.class, new CardPaymentService());
+
+        return locator;
     }
 
     @Bean
-    public ServerService serverService(DefaultServiceLocator serviceLocator) {
-        return serviceLocator.createServerServiceInstance(); // 팩토리 메서드 호출
+    public CardPaymentService cardService(ServiceLocator serviceLocator) {
+        return serviceLocator.getService(CardPaymentService.class); // 팩토리 메서드 호출
     }
 
     @Bean
-    public AccountService accountService(DefaultServiceLocator serviceLocator) {
-        return serviceLocator.createAccountServiceInstance(); // 다른 팩토리 메서드 호출
+    public PaypalPaymentService paypalService(ServiceLocator serviceLocator) {
+        return serviceLocator.getService(PaypalPaymentService.class); // 다른 팩토리 메서드 호출
     }
 }
 
-class DefaultServiceLocator {
-    private static final ServerService serverService = new ServerService();
-    private static final AccountService accountService = new AccountService();
-
-    public ServerService createServerServiceInstance() {
-        return serverService;
-    }
-
-    public AccountService createAccountServiceInstance() {
-        return accountService;
-    }
-}
-
-class ServerService {
-    public ServerService() {
-        System.out.println("ServerService created.");
-    }
-}
-
-class AccountService {
-    public AccountService() {
-        System.out.println("AccountService created.");
-    }
-}

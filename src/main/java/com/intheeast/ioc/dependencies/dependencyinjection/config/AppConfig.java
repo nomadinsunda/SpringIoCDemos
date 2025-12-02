@@ -10,10 +10,21 @@ import com.intheeast.ioc.dependencies.dependencyinjection.service.MovieFinder;
 import com.intheeast.ioc.dependencies.dependencyinjection.service.SimpleMovieFinder;
 import com.intheeast.ioc.dependencies.dependencyinjection.service.SimpleMovieLister;
 
-
-@Configuration(proxyBeanMethods=true)
+/* 
+ Specify whether @Bean methods should get proxied in order to enforce 
+ bean lifecycle behavior, 
+ for example, to return shared singleton bean instances even 
+ in case of direct @Bean method calls in user code. 
+ This feature requires method interception, 
+ implemented through a runtime-generated CGLIB subclass which comes with limitations such as the configuration class and its methods not being allowed to declare final.
+ */
+@Configuration(proxyBeanMethods=false)
 @ComponentScan({"com.intheeast.ioc.dependencies.dependencyinjection"})
 public class AppConfig {
+	
+	public AppConfig() {
+		System.out.println("AppConfig");
+	}
 
     // Define MovieFinder bean
     @Bean
@@ -24,6 +35,7 @@ public class AppConfig {
     // Define SimpleMovieLister bean
     @Bean
     public SimpleMovieLister movieLister(/*MovieFinder movieFinder*/) {
+    	
     	SimpleMovieLister movieLister = new SimpleMovieLister();
         movieLister.setMovieFinder(movieFinder()); // Setter-based DI
         return movieLister;
@@ -38,7 +50,8 @@ public class AppConfig {
         PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
         // 절대 경로=C:\development\Workspace\codes\spring_legacy\SpringIoCDemos\src\main\resources\example.properties
         // The default class loader will be used for loading the resource.
-        configurer.setLocation(new ClassPathResource("example.properties"));
+        // ../src/main/resources/example.properties
+        configurer.setLocation(new ClassPathResource("example/example.properties"));
         return configurer;
     }
 }

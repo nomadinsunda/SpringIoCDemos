@@ -4,7 +4,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
 public class MyBean {
-    //@PostConstruct
+//    @PostConstruct
     public void init() {
         System.out.println("MyBean is initialized");
     }

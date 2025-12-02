@@ -5,7 +5,8 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class CustomAwareBean implements ApplicationContextAware, BeanNameAware {
+public class CustomAwareBean implements ApplicationContextAware, 
+										BeanNameAware {
 
     private ApplicationContext applicationContext;
     private String beanName;

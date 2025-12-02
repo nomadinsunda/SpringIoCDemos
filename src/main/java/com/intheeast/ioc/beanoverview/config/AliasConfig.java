@@ -1,5 +1,7 @@
 package com.intheeast.ioc.beanoverview.config;
 
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -22,8 +24,9 @@ public class AliasConfig {
     	                             // id가 있기도 하고, 없기도 하다?...
     	                             // BeanDefintion의 name 필드[String[]]에
     	                             // Bean 이름을 저장합니다...
-    	                             // 다수의 이름을 가질 수 있음...
-//    	BeanDefinition bf;
+    	                             // 다수의 이름을 지정할 수 있음...
+    	BeanDefinition bf;
+    	GenericBeanDefinition gbd;
         return new DataSource();
     }
 }

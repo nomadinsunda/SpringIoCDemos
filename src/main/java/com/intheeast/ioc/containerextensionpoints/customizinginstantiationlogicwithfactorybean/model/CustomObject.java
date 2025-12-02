@@ -1,4 +1,4 @@
-package com.intheeast.ioc.customizinginstantiationlogicwithfactorybean.model;
+package com.intheeast.ioc.containerextensionpoints.customizinginstantiationlogicwithfactorybean.model;
 
 public class CustomObject {
 

@@ -1,9 +1,10 @@
-package com.intheeast.ioc.customizinginstantiationlogicwithfactorybean.config;
+package com.intheeast.ioc.containerextensionpoints.customizinginstantiationlogicwithfactorybean.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.intheeast.ioc.customizinginstantiationlogicwithfactorybean.model.CustomObjectFactoryBean;
+import com.intheeast.ioc.containerextensionpoints.customizinginstantiationlogicwithfactorybean.model.CustomObjectFactoryBean;
+
 
 @Configuration
 public class AppConfig {

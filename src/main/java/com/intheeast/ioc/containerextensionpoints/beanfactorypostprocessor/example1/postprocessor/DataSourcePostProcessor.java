@@ -13,7 +13,7 @@ public class DataSourcePostProcessor implements BeanFactoryPostProcessor {
 
         BeanDefinition beanDefinition = beanFactory.getBeanDefinition("dataSource");
 
-        // 빈 정의 수준에서 프로퍼티를 수정함
+        // BeanDefinition 수준에서 프로퍼티를 수정함
         beanDefinition.getPropertyValues().add("driverClassName", "org.h2.Driver");
         beanDefinition.getPropertyValues().add("url", "jdbc:h2:mem:testdb");
         beanDefinition.getPropertyValues().add("username", "admin");

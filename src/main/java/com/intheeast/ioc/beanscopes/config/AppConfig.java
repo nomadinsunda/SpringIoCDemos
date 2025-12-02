@@ -26,9 +26,12 @@ public class AppConfig {
     }
 
     // Lifecycle Bean
-    @Bean(initMethod="init")
+    @Bean/*(initMethod="init")*/
     public MyBean myBean() {
-        return new MyBean();
+    	MyBean myBean = new MyBean();
+    	myBean.init();
+    	return myBean;
+//        return new MyBean();
     }
 
     // Singleton with Prototype Dependency

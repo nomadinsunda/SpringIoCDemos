@@ -1,4 +1,4 @@
-package com.intheeast.ioc.customizinginstantiationlogicwithfactorybean.model;
+package com.intheeast.ioc.containerextensionpoints.customizinginstantiationlogicwithfactorybean.model;
 
 import org.springframework.beans.factory.FactoryBean;
 
@@ -17,7 +17,9 @@ public class CustomObjectFactoryBean implements FactoryBean<CustomObject> {
 
     @Override
     public CustomObject getObject() {
-        // 객체 생성 로직
+        // 복잡한 객체 생성 로직
+    	// ...
+    	
         return new CustomObject(name, value);
     }
 

@@ -7,6 +7,8 @@ import com.intheeast.ioc.dependencies.dependencyinjection.config.AppConfig;
 import com.intheeast.ioc.dependencies.dependencyinjection.dao.Repository;
 import com.intheeast.ioc.dependencies.dependencyinjection.service.Aservice;
 import com.intheeast.ioc.dependencies.dependencyinjection.service.Bservice;
+import com.intheeast.ioc.dependencies.dependencyinjection.service.CircularReferenceA;
+import com.intheeast.ioc.dependencies.dependencyinjection.service.CircularReferenceB;
 import com.intheeast.ioc.dependencies.dependencyinjection.service.ExampleBean;
 import com.intheeast.ioc.dependencies.dependencyinjection.service.Service;
 import com.intheeast.ioc.dependencies.dependencyinjection.service.SimpleMovieLister;
@@ -34,6 +36,15 @@ public class MainApp {
         
         ExampleBean exampleBean = (ExampleBean) context.getBean("exampleBean");
         
+        CircularReferenceB crb = (CircularReferenceB)context.getBean(CircularReferenceB.class);
+        
+        CircularReferenceA cra = crb.getCra();
+        
+        CircularReferenceB crb2 = cra.getCrb();
+        
+        if (crb == crb2) {
+        	int a = 2;
+        }
         return ;
     }
 }

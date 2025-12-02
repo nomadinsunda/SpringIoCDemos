@@ -30,6 +30,7 @@ public class AppConfig {
         
         Properties properties = new Properties();
         properties.setProperty("jdbc.driver.className", "com.mysql.cj.jdbc.Driver");
+        // localhost 도메인 이름이 127.0.0.1(loopback address)로 변환됨
         properties.setProperty("jdbc.url", "jdbc:mysql://localhost:3306/testdb");
         configurer.setProperties(properties);
         
@@ -43,6 +44,7 @@ public class AppConfig {
     	// and returning a new java.sql.Connection from every getConnection call.
     	SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
     	
+    	// Class 클래스를 자주 언급함 : reflection 관련 클래스
     	dataSource.setDriverClass((Class<? extends java.sql.Driver>) Class.forName(driverClassName));
     	dataSource.setUrl(url);
         dataSource.setUsername("root");

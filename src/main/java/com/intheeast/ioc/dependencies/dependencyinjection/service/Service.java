@@ -9,7 +9,7 @@ import com.intheeast.ioc.dependencies.dependencyinjection.dao.Repository;
 @Component
 public class Service {
     //private final Repository repository = null;
-	@Autowired
+//	@Autowired
 	private Repository repository;
 
     // 생성자를 통한 의존성 주입
@@ -18,13 +18,15 @@ public class Service {
 //        this.repository = repository;
 //    }
     
-//    public Service() {}
-//    
-//    @Autowired
-//    public void setRepository(Repository repository) {
-//        this.repository = repository;
+//    public Service() {
+//    	int a = 0;
 //    }
-//
+//    
+    @Autowired
+    public void setRepository(Repository repository) {
+        this.repository = repository;
+    }
+
     public void performAction() {
         repository.save();
     }

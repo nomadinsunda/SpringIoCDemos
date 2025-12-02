@@ -5,11 +5,16 @@ import org.springframework.core.Ordered;
 
 public class CustomBeanPostProcessor implements BeanPostProcessor, Ordered {
 
+	@Override
+	public int getOrder() {
+		return 0;
+	}
+	
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) {
         if (bean instanceof ExampleBean) {
             ExampleBean exampleBean = (ExampleBean) bean;
-            System.out.println("CustomBeanPostProcessor - Before Initialization: " + beanName);
+            System.out.println("CustomBeanPostProcessor - postProcessBeforeInitialization: " + beanName);
             exampleBean.setMessage(exampleBean.getMessage() + " [Modified by CustomBeanPostProcessor]");
         }
         return bean;
@@ -18,14 +23,10 @@ public class CustomBeanPostProcessor implements BeanPostProcessor, Ordered {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) {
         if (bean instanceof ExampleBean) {
-            System.out.println("CustomBeanPostProcessor - After Initialization: " + beanName);
+            System.out.println("CustomBeanPostProcessor - postProcessAfterInitialization: " + beanName);
         }
         return bean;
     }
 
-	@Override
-	public int getOrder() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 }

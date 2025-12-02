@@ -32,6 +32,8 @@ public class Main {
 
         System.out.println("\nClosing ApplicationContext...");
         context.close();
+        
+        System.out.println("Good Bye...");
     }
 
 }

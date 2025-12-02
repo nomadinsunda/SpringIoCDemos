@@ -18,6 +18,7 @@ import com.intheeast.ioc.dependencies.dependenciesandconfiguration.straightvalue
 public class MainApplication {	
 	
 	public static void testPropertiesFile() {
+//		int int a;
 		
 		// Spring Framework 기반의 작업을 할때,
 		// 직접적으로 Properties 클래스를 사용할 일은 거의 없을 것

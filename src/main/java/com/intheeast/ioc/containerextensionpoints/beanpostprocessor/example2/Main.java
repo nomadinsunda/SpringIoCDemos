@@ -13,7 +13,9 @@ public class Main {
         		new AnnotationConfigApplicationContext(AppConfig.class);
 
         // ExampleBean 가져오기
-        ExampleBean exampleBean = context.getBean(ExampleBean.class);
+        ExampleBean exampleBean = context.getBean(ExampleBean.class);        
+        
+//        System.out.println("Final Bean: " + String.valueOf(exampleBean));
         System.out.println("Final Bean: " + exampleBean);
 
         // 컨텍스트 종료

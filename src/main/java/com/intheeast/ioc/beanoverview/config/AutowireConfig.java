@@ -9,7 +9,7 @@ import com.intheeast.ioc.beanoverview.dao.JpaAccountDao;
 import com.intheeast.ioc.beanoverview.service.PetStoreService;
 
 @Configuration
-public class AutowireConfig {
+public class AutowireConfig { // 어노테이션 기반 구성 메타데이터...@Component
 
     @Bean
     public AccountDao accountDao() {
