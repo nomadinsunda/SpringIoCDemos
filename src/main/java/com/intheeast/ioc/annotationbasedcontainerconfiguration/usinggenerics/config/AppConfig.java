@@ -13,12 +13,17 @@ import com.intheeast.ioc.annotationbasedcontainerconfiguration.usinggenerics.dom
 public class AppConfig {
 	
 	@Bean
-    public Store<String>/*StringStore*/ stringStore() {
+    public StringStore stringStore() {
         return new StringStore();
     }
 
     @Bean
-    public Store<Integer>/*IntegerStore*/ integerStore() {
+    public IntegerStore integerStore() {
+        return new IntegerStore();
+    }
+    
+    @Bean
+    public IntegerStore integerStore2() {
         return new IntegerStore();
     }
 

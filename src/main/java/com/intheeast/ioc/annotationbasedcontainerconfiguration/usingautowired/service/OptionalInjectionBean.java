@@ -11,6 +11,7 @@ import jakarta.inject.Inject;
 
 // import javax.inject.Inject; // JSR-330 @Inject 사용 예시 가능
 import java.util.Optional;
+import java.util.function.Consumer;
 
 @Component
 public class OptionalInjectionBean {
@@ -20,13 +21,20 @@ public class OptionalInjectionBean {
 	// required 를 false로 설정하였기 때문에,
 	// optionalField 필드에 주입할 MovieFinder 인터페이스 구체가 없을 경우,
 	// UnsatisfiedDependencyException Exception이 발생하지 않고 null이 주입됨.
-    @Inject
+    @Inject // @Autowired를 대신하는 자바에서 만든 어노테이션
     private MovieFinder optionalField; // 주입 실패 시 null
 
     // 2) Optional 파라미터
+    // Optional : A container object which may or may not contain a non-null value. 
+    // If a value is present, isPresent() returns true. If no value is present, the object is considered empty and isPresent() returns false.
     @Inject//@Autowired
     public void setOptionalFinder(Optional<MovieFinder> optionalFinder) {
-        optionalFinder.ifPresentOrElse(
+    	
+//    	Consumer<? super MovieFinder> action = 
+//    			finder -> System.out.println("[OptionalInjectionBean] setOptionalFinder: " + finder.findAll());
+        
+    	optionalFinder.ifPresentOrElse(
+        		/*action*/
             finder -> System.out.println("[OptionalInjectionBean] setOptionalFinder: " + finder.findAll()),
             () -> System.out.println("[OptionalInjectionBean] setOptionalFinder: No MovieFinder found")
         );

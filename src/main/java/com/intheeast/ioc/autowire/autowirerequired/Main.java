@@ -3,6 +3,8 @@ package com.intheeast.ioc.autowire.autowirerequired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.intheeast.ioc.autowire.autowirerequired.config.AppConfig;
+
 public class Main {
 
 	public static void main(String[] args) {

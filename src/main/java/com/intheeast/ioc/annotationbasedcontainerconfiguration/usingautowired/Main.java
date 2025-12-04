@@ -7,6 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.config.AppConfig;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.config.SelfInjectionBean;
+import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.dao.UserDao;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.service.MovieRecommender;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.service.MultipleCatalogConsumer;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.service.MultipleConstructorsBean;
@@ -30,6 +31,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
+    	
+//    	UserDao userDao = UserDao.builder()
+//    							.name("seo")
+//    							.id("1234")
+//    							.dataSource(null)
+//    							.build();
     	
     	Optional<String> nameOpt = findNameById(1);
     	if (!nameOpt.isEmpty()) {

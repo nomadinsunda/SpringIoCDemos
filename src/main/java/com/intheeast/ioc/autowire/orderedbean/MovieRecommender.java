@@ -12,8 +12,9 @@ public class MovieRecommender {
     
     private final MovieCatalog defaultCatalog; // 디폴트 빈으로 주입
 
-    @Autowired
-    public MovieRecommender(List<MovieCatalog> movieCatalogs, MovieCatalog defaultCatalog) {
+    @Autowired // 
+    public MovieRecommender(List<MovieCatalog> movieCatalogs, 
+    						MovieCatalog defaultCatalog) {
         this.movieCatalogs = movieCatalogs;
         this.defaultCatalog = defaultCatalog;
     }

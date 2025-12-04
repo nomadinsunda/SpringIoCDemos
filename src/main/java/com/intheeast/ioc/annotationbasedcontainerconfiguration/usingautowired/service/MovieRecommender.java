@@ -2,13 +2,16 @@ package com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.s
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.dao.CustomerPreferenceDao;
 import com.intheeast.ioc.annotationbasedcontainerconfiguration.usingautowired.util.MovieCatalog;
 
 // Service : 비즈니스 로직을 구현하는 컴포넌트
-@Service // StereoType:이 컴포넌트(다음 클래스의 인스턴스)는 Service 목적을 두고 있다. 
+// 어노테이션 기반의 구성 메타데이터
+@Service // StereoType:이 컴포넌트(다음 클래스의 인스턴스)는 Service 목적을 두고 있다.
 public class MovieRecommender {
 
     // 1) 필드 주입 예시
@@ -16,16 +19,29 @@ public class MovieRecommender {
     private MovieCatalog movieCatalog;  // ActionMovieCatalog 또는 DramaMovieCatalog 중 자동 매칭
 
    
-    private final CustomerPreferenceDao customerPreferenceDao;
+    private /*final*/ CustomerPreferenceDao customerPreferenceDao;
 
     // 2) 생성자 주입 예시
+    // The blank final field customerPreferenceDao may not have been initialized
+    public MovieRecommender() {
+        System.out.println("Default MovieRecommender Constructor");
+    }
+    
     @Autowired
     public MovieRecommender(CustomerPreferenceDao customerPreferenceDao) {
         this.customerPreferenceDao = customerPreferenceDao;
         
     }
+    
+    public void setCustomerPreferenceDao(CustomerPreferenceDao customerPreferenceDao) {
+		this.customerPreferenceDao = customerPreferenceDao;
+	}
 
-    // 3)일반 메서드(여러 아규먼트) 주입 예시
+    public CustomerPreferenceDao getCustomerPreferenceDao() {
+		return customerPreferenceDao;
+	}
+	
+	// 3)일반 메서드(여러 아규먼트) 주입 예시
     @Autowired
     public void prepare(MovieCatalog movieCatalog,
                         CustomerPreferenceDao customerPreferenceDao) {

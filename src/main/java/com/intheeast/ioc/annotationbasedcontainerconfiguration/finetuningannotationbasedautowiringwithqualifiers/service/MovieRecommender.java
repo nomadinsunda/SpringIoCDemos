@@ -34,7 +34,7 @@ public class MovieRecommender {
 
     // 4) @Offline 커스텀 Qualifier (값 없는 애노테이션)
     @Autowired
-    @Offline
+    @Offline  // offlineCatalog
     private MovieCatalog offlineCatalog;
 
     // 5) @MovieQualifier(genre=, format=) 커스텀 Qualifier
