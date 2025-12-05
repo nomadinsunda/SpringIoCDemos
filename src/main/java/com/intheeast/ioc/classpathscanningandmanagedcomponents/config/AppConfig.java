@@ -3,6 +3,7 @@ package com.intheeast.ioc.classpathscanningandmanagedcomponents.config;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.PropertySource;
 
 /*
 @ComponentScan의 includeFilters 속성은 
@@ -16,14 +17,15 @@ includeFilters는 특정 조건에 맞는 클래스를 필터링해서 스프링
  */
 @Configuration
 @ComponentScan(
-        basePackages = {"com.intheeast.ioc.classpathscanningandmanagedcomponents.controller",
+        basePackages = "${app.scan.packages}"/*{"com.intheeast.ioc.classpathscanningandmanagedcomponents.controller",
         		"com.intheeast.ioc.classpathscanningandmanagedcomponents.repository",
-        		"com.intheeast.ioc.classpathscanningandmanagedcomponents.service"},
+        		"com.intheeast.ioc.classpathscanningandmanagedcomponents.service"}*/,
         includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, value = com.intheeast.ioc.classpathscanningandmanagedcomponents.qualifier.Online.class),
 //        includeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*Repository"),
         excludeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*Comedy.*Repository"),
         scopeResolver = MyScopeResolver.class
 )
+@PropertySource("classpath:application.properties")
 public class AppConfig {
 	
 	

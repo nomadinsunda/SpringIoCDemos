@@ -3,23 +3,20 @@ package com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconf
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-public class TransferServiceImpl implements TransferService {
-
+@Component
+public class HelloWorld {	
+	
 	private final AccountRepository accountRepository;
 
 //	public TransferServiceImpl() {
 //		System.out.println("✅ TransferServiceImpl 생성됨");
 //	}
 	
-	public TransferServiceImpl(AccountRepository accountRepository) {
+//	@Autowired
+	public HelloWorld(AccountRepository accountRepository) {
 		this.accountRepository = accountRepository;
 		System.out.println("✅ TransferServiceImpl 생성됨");
 	}
 
-	@Override
-	public void transfer(double amount, String fromAccount, String toAccount) {
-		System.out.println("🚀 이체 시작: " + amount + " from " + fromAccount + " to " + toAccount);
-		accountRepository.updateAccount(fromAccount, -amount);
-		accountRepository.updateAccount(toAccount, amount);
-	}
+
 }

@@ -6,6 +6,11 @@ public class JdbcAccountRepository implements AccountRepository {
 
 	private final DataSource dataSource;
 
+//	public JdbcAccountRepository() {
+//		
+//		System.out.println("✅ JdbcAccountRepository 생성됨: " + dataSource);
+//	}
+	
 	public JdbcAccountRepository(DataSource dataSource) {
 		this.dataSource = dataSource;
 		System.out.println("✅ JdbcAccountRepository 생성됨: " + dataSource);

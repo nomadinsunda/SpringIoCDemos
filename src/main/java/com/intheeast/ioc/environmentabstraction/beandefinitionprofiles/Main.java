@@ -12,9 +12,9 @@ public class Main {
         		new AnnotationConfigApplicationContext();
 
         // 2. 활성화할 프로필 설정 (예: default, dev, prod)
-        ctx.getEnvironment().setActiveProfiles("default");
+//        ctx.getEnvironment().setActiveProfiles("default");
 //        ctx.getEnvironment().setActiveProfiles("dev");
-//        ctx.getEnvironment().setActiveProfiles("prod");         
+        ctx.getEnvironment().setActiveProfiles("prod");         
 
         // 3. 구성 클래스 등록
         ctx.register(AppConfig.class, 

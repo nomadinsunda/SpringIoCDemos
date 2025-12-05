@@ -4,6 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.intheeast.ioc.classpathscanningandmanagedcomponents.config.AppConfig;
 import com.intheeast.ioc.classpathscanningandmanagedcomponents.controller.MovieController;
+import com.intheeast.ioc.classpathscanningandmanagedcomponents.repository.ComedyMovieRepository;
 import com.intheeast.ioc.classpathscanningandmanagedcomponents.service.MovieService;
 import com.intheeast.ioc.classpathscanningandmanagedcomponents.service.QualifierMovieService;
 import com.intheeast.ioc.classpathscanningandmanagedcomponents.service.ScopedMovieService;
@@ -28,25 +29,27 @@ public class Main {
 
 
         // MovieService Bean 가져오기
-//        MovieService movieService = context.getBean(MovieService.class);
-//        System.out.println("\n[Main] MovieService 빈 호출:");
-//        movieService.listMovies();
-//
-//        // QualifierMovieService Bean 가져오기
-//        QualifierMovieService qualifierService = context.getBean(QualifierMovieService.class);
-//        System.out.println("\n[Main] QualifierMovieService 빈 호출:");
-//        qualifierService.printMovies();
-//
-//        // ScopedMovieService Bean 가져오기
-//        ScopedMovieService scopedService = context.getBean(ScopedMovieService.class);
-//        System.out.println("\n[Main] ScopedMovieService 빈 호출:");
-//        scopedService.print();
-//
-//        // MovieController Bean 가져오기
-//        MovieController controller = context.getBean(MovieController.class);
-//        System.out.println("\n[Main] MovieController 빈 호출:");
-//        controller.display();        
-//        
+        MovieService movieService = context.getBean(MovieService.class);
+        System.out.println("\n[Main] MovieService 빈 호출:");
+        movieService.listMovies();
+
+        // QualifierMovieService Bean 가져오기
+        QualifierMovieService qualifierService = context.getBean(QualifierMovieService.class);
+        System.out.println("\n[Main] QualifierMovieService 빈 호출:");
+        qualifierService.printMovies();
+
+        // ScopedMovieService Bean 가져오기
+        ScopedMovieService scopedService = context.getBean(ScopedMovieService.class);
+        System.out.println("\n[Main] ScopedMovieService 빈 호출:");
+        scopedService.print();
+
+        // MovieController Bean 가져오기
+        MovieController controller = context.getBean(MovieController.class);
+        System.out.println("\n[Main] MovieController 빈 호출:");
+        controller.display(); 
+        
+//        ComedyMovieRepository cmp = context.getBean(ComedyMovieRepository.class);
+        
         context.close();
 
         System.out.println("=== Application Finished ===");

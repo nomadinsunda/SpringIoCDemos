@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfigurations.usingautowiredinconfigurationclass.components.*;
+import com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfigurations.usingautowiredinconfigurationclass.domain.HelloWorld;
 
 
 @Configuration
@@ -16,6 +17,11 @@ public class ProcessorConfig {
 	public ProcessorConfig() {
 		System.out.println("ProcessorConfig:ProcessorConfig");
 	}
+	
+//	@Bean
+//	public HelloWorld hello() {
+//		return new HelloWorld();
+//	}
 
     // 정적 @Bean 메서드로 BeanPostProcessor 정의
     @Bean

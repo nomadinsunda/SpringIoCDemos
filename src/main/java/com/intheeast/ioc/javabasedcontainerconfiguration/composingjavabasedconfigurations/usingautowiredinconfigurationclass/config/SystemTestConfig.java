@@ -13,17 +13,19 @@ import javax.sql.DataSource;
 
 @Configuration
 @Import({ProcessorConfig.class, ServiceConfig.class, RepositoryConfig.class})
+@ComponentScan("com.intheeast.ioc.javabasedcontainerconfiguration.composingjavabasedconfigurations.usingautowiredinconfigurationclass.domain")
 public class SystemTestConfig {
 	
 	public SystemTestConfig() {
-		System.out.println("✅ SystemTestConfig Default Constructor");
+		System.out.println("SystemTestConfig");
 	}
-
+		
 	@SuppressWarnings("unchecked")
 	@Bean
 	public DataSource dataSource() {
 		SimpleDriverDataSource ds = new SimpleDriverDataSource();
 		try {
+			// Class.forName(com.mysql.cj.jdbc.Driver)
 			ds.setDriverClass((Class<? extends Driver>) Class.forName("com.mysql.cj.jdbc.Driver"));
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException("MySQL 드라이버를 찾을 수 없습니다.", e);
@@ -42,8 +44,9 @@ public class SystemTestConfig {
 		System.out.println("✅ ++ SystemTestConfig initialized");
         // 이 메서드 내에서 동일한 구성 클래스의 비정적 @Bean 메서드에 접근하지 마세요
         // 예: dataSource(); (비정적 메서드 접근 금지)
-		DataSource dataSource = dataSource();
-		BeanPostProcessor beanPostProcessor = ProcessorConfig.customBeanPostProcessor();
+		//DataSource dataSource = dataSource();
+		
+		//BeanPostProcessor beanPostProcessor = ProcessorConfig.customBeanPostProcessor();
         System.out.println("✅ -- SystemTestConfig initialized");
     }
 }

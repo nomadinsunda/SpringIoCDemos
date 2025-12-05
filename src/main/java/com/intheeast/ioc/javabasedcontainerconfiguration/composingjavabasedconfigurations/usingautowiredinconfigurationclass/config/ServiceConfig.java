@@ -12,6 +12,11 @@ public class ServiceConfig {
 	@Autowired
 	private AccountRepository accountRepository;  // RepositoryConfig에서 주입됨
 
+	
+	public ServiceConfig() {
+		System.out.println("ServiceConfig:ServiceConfig");
+	}
+	
 	@Bean
 	public TransferService transferService() {
 		return new TransferServiceImpl(accountRepository);

@@ -3,11 +3,10 @@ package com.intheeast.ioc.classpathscanningandmanagedcomponents.repository;
 import org.springframework.stereotype.Component;
 
 import com.intheeast.ioc.classpathscanningandmanagedcomponents.domain.Movie;
-import com.intheeast.ioc.classpathscanningandmanagedcomponents.qualifier.Online;
 
 import java.util.List;
 
-@Component // actionMovieRepository
+@Component // 디폴트로 빈이름은 : actionMovieRepository
 public class ActionMovieRepository implements MovieRepository {
 	
 	public ActionMovieRepository() {

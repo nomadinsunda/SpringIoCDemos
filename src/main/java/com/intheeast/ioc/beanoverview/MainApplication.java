@@ -8,6 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.intheeast.ioc.beanoverview.config.AliasConfig;
+import com.intheeast.ioc.beanoverview.config.AllConfigs;
 import com.intheeast.ioc.beanoverview.config.AutowireConfig;
 import com.intheeast.ioc.beanoverview.config.BasicBeanConfig;
 import com.intheeast.ioc.beanoverview.config.InstanceFactoryMethodConfig;
@@ -60,16 +61,28 @@ public class MainApplication {
 		MainApplication mainApp = 
 				new MainApplication();
 		
-		ApplicationContext context = new AnnotationConfigApplicationContext(
-	            BasicBeanConfig.class,
-	            StaticFactoryMethodConfig.class,
-	            InstanceFactoryMethodConfig.class,
-	            LazyInitConfig.class,
-	            ScopeConfig.class,
-	            AliasConfig.class,
-	            AutowireConfig.class
-	        );
-
+//		ApplicationContext context = new AnnotationConfigApplicationContext(
+//	            BasicBeanConfig.class,
+//	            StaticFactoryMethodConfig.class,
+//	            InstanceFactoryMethodConfig.class,
+//	            LazyInitConfig.class,
+//	            ScopeConfig.class,
+//	            AliasConfig.class,
+//	            AutowireConfig.class
+//	        );
+		
+		// AllConfigs
+//		ApplicationContext context = 
+//				new AnnotationConfigApplicationContext(AllConfigs.class);
+		
+		ApplicationContext context = 
+				new AnnotationConfigApplicationContext();
+		
+		AnnotationConfigApplicationContext castContext =
+				(AnnotationConfigApplicationContext)context;
+		
+		castContext.register(AllConfigs.class);
+		
         // Lazy Bean 테스트	
         System.out.println("Requesting ExpensiveBean...");
         ExpensiveBean expensiveBean = context.getBean(ExpensiveBean.class);

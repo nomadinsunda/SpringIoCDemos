@@ -15,7 +15,8 @@ public class AppConfig {
 	
 	@Bean
 	// ScopedProxyMode.TARGET_CLASS : 이 빈이 싱글톤에 주입될 때 프록시로 감싸지도록 지시합니다.
-    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, 
+    proxyMode = ScopedProxyMode.TARGET_CLASS)
     public TaskTracker taskTracker() {
         // 이 메서드는 실제로는 단 한 번만 호출되거나, 프록시가 필요한 경우에만 호출됩니다.
         return new TaskTracker();
